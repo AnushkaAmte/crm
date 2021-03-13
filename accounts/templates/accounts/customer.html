@@ -1,0 +1,61 @@
+{% extends 'accounts/index.html'%} 
+{% block content %}
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card card-body">
+          <div class="card-title"><h5>Customer</h5></div>
+          <table class='table'>
+            <tr>
+              <a class="btn btn-outline-primary btn-lg btn-block" href="">Update Customer</a>
+              </tr>
+              <tr>
+                <a class="btn btn-outline-danger btn-lg btn-block" href="">Delete Customer</a>
+              </tr>
+          </table>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card card-body">
+        <div class="card-title"><h5>Contact Information</h5>
+        <table class="table">
+          <tr>
+          <th><h5>Email:</h5></th>
+        </tr>
+        <tr>
+          <th><h5>Phone:</h5></th>
+        </tr>
+        </table>
+      </div>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card card-body">
+        <div class="card-title"><h5>Total Orders</h5></div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+   <div class="card card-body">
+    <form action="" method="get">
+      <button class="btn btn-primary"href="" type="submit">Search</button>
+    </form>
+   </div>
+  </div>
+  <div class="row">
+    <div class="card card-body">
+      <table class="table">
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Date Ordered</th>
+          <th>Status</th>
+          <th>Update</th>
+          <th>Remove</th>
+        </tr>
+      </table>
+    </div>
+  </div>
+  {% endblock%}
+</accounts>
