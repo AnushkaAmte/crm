@@ -54,4 +54,4 @@ class Order(models.Model):
     product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.status
+        return self.product.name
