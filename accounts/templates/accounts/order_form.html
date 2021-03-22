@@ -4,11 +4,10 @@
 <div class="row justify-content-md-center">
   <div class="col-md-7">
     <div class="card card-body">
-      <div class="card-title">{{order}}</div>
+      <div class="card-title">Order</div>
       <table class="table">
         <form method="POST" action="">
-          {% csrf_token%} {{ formset.management_form }} {% for form in formset%}
-          {{form}} {% endfor %}
+          {% csrf_token%} {{form}}
           <input type="submit" name="Submit" class="btn btn-outline-primary" />
         </form>
       </table>
