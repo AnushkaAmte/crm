@@ -64,7 +64,7 @@ def logoutUser(request):
 
 
 @login_required(login_url='login')
-@admin_only
+
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
@@ -74,7 +74,7 @@ def home(request):
     pending = orders.filter(status='Pending').count()
     context = {'orders': orders, 'customers': customers, 'total_customers': total_customers,
                'total_orders': total_orders, 'delivered': delivered, 'pending': pending}
-    return render(request, 'accounts/ hboard.html', context)
+    return render(request, 'accounts/dashboard.html', context)
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['customer'])
@@ -90,6 +90,20 @@ def userPage(request):
      'delivered': delivered, 
      'pending': pending}
     return render(request,'accounts/user.html',context)
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer']) 
+def accountSettings(request):
+    customer = request.user.customer
+    form = CustomerForm(instance=customer)
+
+    if request.method == 'POST':
+         form = CustomerForm(request.POST,request.FILES,instance=customer)
+         if form.is_valid():
+             form.save()
+
+    context = {'form': form}
+    return render(request,'accounts/account_settings.html',context)
 
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['admin'])

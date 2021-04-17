@@ -1,5 +1,9 @@
+from os import name
 from django.urls import path
 from . import views
+import accounts
+
+
 
 
 urlpatterns = [
@@ -9,6 +13,7 @@ urlpatterns = [
     
     path('', views.home, name='home'),
     path('user/',views.userPage,name="user-page"),
+    path('account/', views.accountSettings,name="account"),
     path('products/', views.products, name='products'),
     path('customer/<str:pk_test>/', views.customer, name='customers'),
     
@@ -16,3 +21,4 @@ urlpatterns = [
     path('update_order/<str:pk>/', views.update_order, name='update_order'),
     path('delete_order/<str:pk>/', views.delete_order, name='delete_order'),
 ]
+

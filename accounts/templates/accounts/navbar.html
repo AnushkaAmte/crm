@@ -22,8 +22,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
+      {% if request.user.is_staff %}
       <a class="nav-item nav-link" href="{% url 'home'%}">DashBoard</a>
       <a class="nav-item nav-link" href="{% url 'products'%}">Products</a>
+      {% else %}
+      
+      <a class="nav-item nav-link" href="{% url 'account'%}">Settings</a> 
+     
+    {% endif %}
     </div>
   </div>
   <span class="hello-msg">Hello, {{request.user}}</span>
