@@ -12,11 +12,11 @@
        <tr>
          <th></th>
         <th>Customer</th>
-        <th>Orders</th>
+        <!-- <th>Orders</th> -->
        </tr>
        {%for i in customers%}
        <tr>
-         <td><a href="{% url 'customers' i.id%}" class="btn btn-sm btn-outline-primary">View</a></td>
+         <td><a href="{% url 'customers' i.id%}" class="btn btn-md btn-outline-primary">View</a></td>
          <td>{{i.name}}</td>
        </tr>
        {%endfor%}
