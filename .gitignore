@@ -1,0 +1,5 @@
+crm/__pycache__
+crm/__init.py
+crm/asgi.py
+crm/wsgi.py
+accounts/__pycache__
