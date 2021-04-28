@@ -1,3 +1,3 @@
 # CRM
 
-Cusstomer Relationship Management using Django and SQLite for Python Project
+Customer Relationship Management using Django and SQLite for Python Project
